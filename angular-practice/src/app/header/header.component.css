@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
+
+.ekart-logo {
+    font-family: 'Castoro', serif;
+    font-weight: bolder;
+
+}
+
+.ekart-search-box {
+    width: 170px;
+    height: 33px;
+    border: none;
+    background-color: #efefef;
+    padding: 2px 10px;
+}
