@@ -42,5 +42,7 @@
 *//typings
 
 # System Files
-*/.DS_Store
+.DS_Store
 */Thumbs.db
+*/.browser*
+*/.editor*
