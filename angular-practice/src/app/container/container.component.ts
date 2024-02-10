@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent implements OnInit {
+  searchText: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  setSearchText(value: string) {
+    this.searchText = value;
+  }
 }

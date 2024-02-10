@@ -1,17 +1,6 @@
+<app-filter [all]="totalProductsCount" [inStock]="inStockProductCount" [outOfStock]="outOfStockProductCount"
+    (onRadioButtonChangedEvent)="onFilterRadioButtonChanged($event)"></app-filter>
 <div class="ekart-product-item" *ngFor="let product of products">
-    <div class="ekart-wislist-sale-container">
-        <div class="ekart-add-to-wislist">
-            <i class=" fa fa-heart-o" aria-hidden="true"></i>
-        </div>
-        <div class="ekart-on-sale-tag">75% OFF</div>
-    </div>
-    <div class="ekart-product-image">
-        <img [src]="product.image_url" class="ekart-product-image">
-    </div>
-    <div class="ekart-add-to-price">
-        {{product.price}}
-    </div>
-    <div class="ekart-product-name">{{product.name}}</div>
-    <div class="ekart-product-category">{{product.category}}</div>
-    <div class="ekart-product-available-colors">{{product.color.length}} Colors . Best Seller</div>
+    <app-product [product]="product"
+        *ngIf="((product.is_in_inventory && (selectedRadioButton==='In Stock' || selectedRadioButton==='All')) || (!product.is_in_inventory && (selectedRadioButton==='Out Of Stock' || selectedRadioButton==='All'))) && (product.name === '' || product.name.includes(searchText))"></app-product>
 </div>

@@ -7,6 +7,6 @@
         <button (click)="decrementAddToCartValue()" [disabled]="!product.inStock">-</button>
         <span>{{addToCart}}</span>
         <button (click)="incrementAddToCartValue()" [disabled]="!product.inStock">+</button> -->
-        <app-search></app-search> 
-        <product-list></product-list>
+        <app-search (searchTextChangedEvent)="setSearchText($event)"></app-search> 
+        <product-list [searchText]="searchText"></product-list>
     </div>
