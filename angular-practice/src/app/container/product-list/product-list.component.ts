@@ -7,12 +7,13 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  selectedProduct:Product;
   products:Product[] = [
     {
       id: 1,
       name: "iphone",
       description: "iphone15",
-      brand: "Applee",
+      brand: "Apple",
       category: "SamrtPhone",
       size: "6.7",
       color: ["Red", "Silver", "Gold"],
@@ -47,7 +48,12 @@ export class ProductListComponent implements OnInit {
   }
   onFilterRadioButtonChanged(value: string) {
     this.selectedRadioButton = value;
-    console.log(this.selectedRadioButton);
+  }
+
+  getProductDetail(product:Product){
+    console.log(product);
+    this.selectedProduct=product;
+
   }
 
 }

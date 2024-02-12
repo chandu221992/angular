@@ -1,9 +1,9 @@
 <div>
     <span>Filter : </span>
-    <input type="radio" name="filter" value="All" [(ngModel)]="selectedRadioButton" (change)="onRadioButtonChanged()">
+    <input type="radio" name="filter" value="All" [(ngModel)]="selectedRadioButton" (change)="onRadioButtonChanged()" #filterInputElement>
     <span>{{'All ('+all+')'}}</span>
-    <input type="radio" name="filter" value="In Stock" [(ngModel)]="selectedRadioButton" (change)="onRadioButtonChanged()">
+    <input type="radio" name="filter" value="In Stock" [(ngModel)]="selectedRadioButton" (change)="onRadioButtonChanged()" #filterInputElement>
     <span>{{'In Stock ('+inStock+')'}}</span>
-    <input type="radio" name="filter" value="Out Of Stock" [(ngModel)]="selectedRadioButton" (change)="onRadioButtonChanged()">
+    <input type="radio" name="filter" value="Out Of Stock" [(ngModel)]="selectedRadioButton" (change)="onRadioButtonChanged()" #filterInputElement>
     <span>{{'Out Of Stock ('+outOfStock+')'}}</span>
 </div>

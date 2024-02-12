@@ -7,6 +7,23 @@
         <button (click)="decrementAddToCartValue()" [disabled]="!product.inStock">-</button>
         <span>{{addToCart}}</span>
         <button (click)="incrementAddToCartValue()" [disabled]="!product.inStock">+</button> -->
-        <app-search (searchTextChangedEvent)="setSearchText($event)"></app-search> 
-        <product-list [searchText]="searchText"></product-list>
+    <!-- <app-search (searchTextChangedEvent)="setSearchText($event)"></app-search>  -->
+    <app-search (searchTextChangedEvent)="setSearchText($event)"></app-search>
+    <product-list [searchText]="searchText" #productListComponent></product-list>
+    <product-detail *ngIf="productListComponent.selectedProduct" [product]="productListComp.selectedProduct">
+    </product-detail>
+    <div class="ekart-featured-products">
+        <div class="ekart-featured-product-heading">
+            <h1>
+                New Arrivals in SmartPhones
+            </h1>
+        </div>
+        <featured-product><h3 class="title"> One Plus SmartPhones</h3>
+            <button class="call-to-action">Learn More</button>
+        </featured-product>
+        <featured-product>
+            <h3 class="title"> Motorola Smart Phones </h3>
+            <button class="call-to-action">Learn More</button>
+        </featured-product>
     </div>
+</div>

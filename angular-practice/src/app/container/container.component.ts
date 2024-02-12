@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @Component({
   selector: 'app-container',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent implements OnInit {
+  @ViewChild(ProductListComponent)
+  productListComp:ProductListComponent;
   searchText: string = '';
 
   constructor() { }

@@ -14,5 +14,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  getProductDetail(product:Product){
+  }
 
 }

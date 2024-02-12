@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 
 
 @Component({
@@ -7,6 +7,8 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
+  @ViewChildren('filterInputElement')
+  radioButtonInput: QueryList<ElementRef>;
   @Input()
   all: number = 0;
   @Input()
@@ -22,7 +24,7 @@ export class FilterComponent implements OnInit {
   onRadioButtonChangedEvent: EventEmitter<string> = new EventEmitter<string>();
   selectedRadioButton: string = 'All'
   onRadioButtonChanged() {
-    this.onRadioButtonChangedEvent.emit(this.selectedRadioButton);
+    this.radioButtonInput.filter(f => f.nativeElement.value === this.selectedRadioButton).forEach((f) => this.onRadioButtonChangedEvent.emit(f.nativeElement.value));
   }
 
 }
