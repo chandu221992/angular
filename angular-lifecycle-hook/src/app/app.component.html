@@ -1,0 +1,3 @@
+<input type="text" #inputEL>
+<button (click)="setMessage(inputEL)">Submit</button>
+<app-demo [message]="message" *ngIf="message.length>0"><p #tempPara>This is projected Contenet for {{message}}</p></app-demo>
