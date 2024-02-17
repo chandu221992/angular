@@ -14,6 +14,7 @@ import { ProductComponent } from './container/product-list/product/product.compo
 import { FilterComponent } from './container/product-list/filter/filter.component';
 import { ProductDetailComponent } from './container/product-detail/product-detail.component';
 import { FeaturedProductComponent } from './container/featured-product/featured-product.component';
+import { ChangeStyle } from './directives/style.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FeaturedProductComponent } from './container/featured-product/featured-
     ProductComponent,
     FilterComponent,
     ProductDetailComponent,
-    FeaturedProductComponent
+    FeaturedProductComponent,
+    ChangeStyle
   ],
   imports: [
     BrowserModule,
